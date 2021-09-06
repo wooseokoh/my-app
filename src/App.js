@@ -12,7 +12,7 @@ import './App.css';
 // (5) css 디자인.
 // - 내부에 적는방법
 // - 외부파일에 적는방법
-// - 라이브러리 사용 (부트스트랩, coomponet-styled)
+// - 라이브러리 사용 (부트스트랩, coomponet-styled) 
 
 let a = 10; // 변수
 const b = 20; // 상수
