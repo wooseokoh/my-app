@@ -22,10 +22,13 @@ const mystyle = {
 };
 
 function App() {
+  let list = [1,2,3];
   return (
     <div>
       <div style={mystyle}>안녕 {a === 10 ? '10입니다.' : '10이 아님'}</div>
       <h1 className="box-style">해딩태그 {b === 20 && '20입니다.'}</h1>
+      <div>{list.map((n) => <h1>{n}</h1>)}</div>
+      <div>{list.map((n) => n)}</div>
     </div>
   );
 }
