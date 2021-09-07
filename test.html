@@ -17,6 +17,26 @@
         b.push(4); // b의 데이터 변경
         console.log(`a의 값은 : ${a}`);
         console.log(`b의 값은 : ${b}`);
+
+        console.log("2.======================= 추가하기");
+        const a2 = [1, 2, 3];
+        const b2 = a2.concat(4);
+        console.log(`a2의 값은 : ${a2}`);
+        console.log(`b2의 값은 : ${b2}`);
+        const c2 = [0, ...a2, 4];
+        console.log(`c2의 값은 : ${c2}`);
+
+        console.log("3.======================= 걸러내기"); // 삭제하기
+        const a3 = [1, 2, 3];
+        const b3 = a3.filter((n) => { return n != 1; }); // bool을 return 받는다.
+        console.log(`b3의 값은 : ${b3}`);
+
+        console.log("4.======================= 잘라내기"); // 잘라내기    
+        const a4 = [1, 2, 3];
+        const b4 = a4.slice(0, 2);
+        console.log(b4);
+        const c4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)];
+        console.log(c4);
     </script>
 </body>
 
