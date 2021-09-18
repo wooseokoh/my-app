@@ -1,46 +1,38 @@
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
-import Third from './aa/Third';
+import { useMemo, useState } from 'react';
 import './App.css';
-import Sub from './Sub';
-import { num } from './Sub';
+
+// useMemo => 메모라이제이션(기억)
 
 function App() {
-  const [data, setData] = useState(0);
-  const [search, setSearch] = useState(0);
 
-  const download = () => {
-    // 다운로드 받고 (통신)
-    let downloadData = 5; // 가정
-    setData(downloadData);
-  };
+  const [list, setList] = useState([1,2,3,4]);
+  const [str, setStr] = useState("합계");
 
-  // 실행시점
-  // (1) App() 그림이 최초 그려질때
-  // (2) 상태 변수가 변경될 때
-  // (3) 의존리스트 관리를 할수 있다.
-  useEffect(() => {
-    console.log('useEffect 실행됨');
-    download();
-  }, [search]);
+  const getAddResult = () => {
+    let sum = 0;
+    list.forEach((i) => (sum = sum + i));
+    return sum;
+  }
+
+  const addResult = useMemo(() => getAddResult(), [list]);
 
   return (
     <div>
-      <button
-        onClick={() => {
-          setSearch(2);
-        }}
-      >
-        검색하기
-      </button>
-      <h1>데이터 : {data}</h1>
-      <button
-        onClick={() => {
-          setData(data + 1);
-        }}
-      >
-        더하기
-      </button>
+        <button onClick={()=>{
+                setStr('안녕');
+              }}>
+          문자 변경
+        </button>
+
+      <button onClick={()=>{
+        setList([...list, 10]);
+      }}>
+          리스트값 추가
+        </button>
+      <div>
+        {list.map((i) => (<h1>{i}</h1>))}
+      </div>
+      <div>{str} : {addResult}</div>
     </div>
   );
 }
