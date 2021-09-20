@@ -5,19 +5,19 @@ import styled from 'styled-components';
 // 하나의 컴포넌트를 생성 (재사용)
 
 // styled-components의 장점 => js+css 파일 관리!!
-const FooterList = styled.div`
+const StyledFooterDiv = styled.div`
     border: 1px solid black;
     height: 300px;
 `;
 
 const Footer = () => {
     return (
-        <FooterList>
+        <StyledFooterDiv>
             <ul>
                 <li>메뉴 1</li>
                 <li>메뉴 2</li>
             </ul>
-        </FooterList>
+        </StyledFooterDiv>
     );
 };
 
