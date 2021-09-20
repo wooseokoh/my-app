@@ -7,7 +7,7 @@ const HomePage = () => {
 
     // http 요청 (jquery ajax, fetch, axios(다운))
     const [boards, setBoards] = useState([]);
-    const [num, setNum] = useState(0);
+    const [user, setUser] = useState({});
 
     // 빈 배열 한번만 실행
     useEffect(() => {
@@ -20,12 +20,13 @@ const HomePage = () => {
 
 
         setBoards([...data]);
+        setUser({id : 1, username : "cos"});
     }, [])
 
     return (
         <div>
             <Header/>
-            <Home boards = {boards} setBoards = {setBoards} num ={num} setNum = {setNum}/> 
+            <Home boards = {boards} setBoards = {setBoards} user = {user}/> 
             <Footer/>
         </div>
     );
